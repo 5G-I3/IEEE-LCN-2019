@@ -1,0 +1,4 @@
+[submodule "RIOT"]
+	path = RIOT
+	url = git@github.com:5G-I3/RIOT-public.git
+	branch = ieee-lcn-19
