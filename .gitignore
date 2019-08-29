@@ -1,6 +1,8 @@
 ## Custom files
 *~
+.*.swp
 apps/*/bin/
+results/
 
 ## Python files
 # Byte-compiled / optimized / DLL files
