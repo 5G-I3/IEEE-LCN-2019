@@ -134,6 +134,7 @@ def run_experiment(user):
     finally:
         _stop_experiment(exp["id"])
 
+
 if __name__ == "__main__":
     logging.basicConfig(format='%(levelname)s: %(message)s',
                         level=logging.INFO)

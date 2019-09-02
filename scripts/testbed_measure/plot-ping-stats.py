@@ -8,7 +8,6 @@
 # General Public License v2.1. See the file LICENSE in the top level
 # directory for more details.
 
-import bz2
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
@@ -26,6 +25,7 @@ DATA_PATH = os.environ.get("DATA_PATH",
 DISTANCES_CSV = os.path.join(DATA_PATH, "distance_test.csv")
 
 YMAX = 110
+
 
 def plot(filename=DISTANCES_CSV, *args):
     fig = plt.figure()
