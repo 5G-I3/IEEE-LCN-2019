@@ -1,0 +1,2 @@
+networkx
+git+https://github.com/miri64/iotlab_controller.git
