@@ -1,2 +1,2 @@
-networkx
+networkx<=2.3
 git+https://github.com/miri64/iotlab_controller.git
