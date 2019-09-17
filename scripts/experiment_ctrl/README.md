@@ -52,7 +52,8 @@ for further information. The resulting `edgelist.gz` file will be stored in
 take a while.
 
 We provided the edge-list file for the nodes we used for our experiments in
-`./../../results`
+`./../../results` (at the moment of this writing some of the nodes in that
+network are sadly disabled by the IoT-LAB admins).
 
 #### Environment variables
 
