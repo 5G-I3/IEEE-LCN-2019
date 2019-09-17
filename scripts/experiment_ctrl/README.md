@@ -14,8 +14,10 @@ The following python packages are required (version numbers indicate tested
 versions):
 
 - `iotlab_controller` (see https://github.com/miri64/iotlab_controller)
-- `networkx` v2.3
+- `libtmux` v0.8
 - `matplotlib` v3.1
+- `networkx` v2.3
+- `pexpect` v4.7
 - `scipy` v1.3
 
 The required packages are listed in `requirements.txt` and can be installed
@@ -24,6 +26,11 @@ using
 ```sh
 pip3 install -r requirements.txt
 ```
+
+You will also require a version of the `ssh` command (e.g. `openssh-client`) to
+interact with the IoT-LAB nodes.
+
+`tmux` is required to multiplex the terminal in the background.
 
 You must also configure your IoT-LAB credentials using `iotlab-auth` which is
 provided by the `iotlabcli` python package (which is automatically installed
