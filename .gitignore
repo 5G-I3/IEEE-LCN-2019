@@ -3,6 +3,7 @@
 .*.swp
 apps/*/bin/
 results/
+scripts/experiment_ctrl/running_experiment.txt
 
 ## Python files
 # Byte-compiled / optimized / DLL files
