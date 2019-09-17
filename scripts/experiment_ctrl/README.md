@@ -46,7 +46,10 @@ This script constructs a sink-oriented network using predefined values. See
 ```
 
 for further information. The resulting `edgelist.gz` file will be stored in
-`./../../results`
+`./../../results`.
+
+**Attention:** Depending on the size, the generation of the edge-list file may
+take a while.
 
 #### Environment variables
 
