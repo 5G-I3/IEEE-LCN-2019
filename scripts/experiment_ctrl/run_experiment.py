@@ -385,8 +385,8 @@ def main():
                         help="Number of UDP packets to send per source "
                              "(default: {})".format(DEFAULT_COUNT))
     parser.add_argument("-W", "--delay", default=DEFAULT_DELAY, type=int,
-                        nargs="+", help="Delay between the UDP packets sent "
-                                        "(default: {})".format(DEFAULT_DELAY))
+                        help="Delay between the UDP packets sent "
+                             "(default: {})".format(DEFAULT_DELAY))
     parser.add_argument("-d", "--duration", default=DEFAULT_DURATION, type=int,
                         help="IoT-LAB experiment duration "
                              "(default: {})".format(DEFAULT_DURATION))
