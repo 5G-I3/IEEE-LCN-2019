@@ -302,12 +302,17 @@ def start_experiment(network, name=None, duration=DEFAULT_DURATION,
         profiles = None
 
     # create and prepare IoT-LAB experiment
-    exp = TmuxExperiment(name, network, run_experiment,
-                         [sink_firmware] +
-                         (len(network) - 1) * [source_firmware],
-                         exp_id, profiles, mode=mode, count=count,
-                         data_len=data_len, delay=delay, sniff=sniff,
-                         run_duration=run_duration, api=api)
+    try:
+        exp = TmuxExperiment(name, network, run_experiment,
+                             [sink_firmware] +
+                             (len(network) - 1) * [source_firmware],
+                             exp_id, profiles, mode=mode, count=count,
+                             data_len=data_len, delay=delay, sniff=sniff,
+                             run_duration=run_duration, api=api)
+    except ExperimentError as e:
+        if os.path.exists(RUNNING_EXPERIMENT_FILE):
+            os.remove(RUNNING_EXPERIMENT_FILE)
+        raise e
     if exp.is_scheduled():
         try:
             if sniff:
