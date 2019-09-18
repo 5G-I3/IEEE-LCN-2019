@@ -46,7 +46,8 @@ for further instructions.
 
 ### `construct_network.py`
 
-This script constructs a sink-oriented network using predefined values. See
+This script constructs a sink-oriented network on the [M3 nodes] in the [IoT-LAB
+testbed] using predefined values. See
 
 ```sh
 ./construct_network.py -h
@@ -65,3 +66,6 @@ network are sadly disabled by the IoT-LAB admins).
 #### Environment variables
 
 - `DATA_PATH`: (default: `./../../results`) Path to store the edge list file in
+
+[M3 nodes]: https://www.iot-lab.info/hardware/m3/
+[IoT-LAB testbed]: https://www.iot-lab.info/
