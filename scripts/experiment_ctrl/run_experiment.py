@@ -39,12 +39,6 @@ __copyright__ = "Copyright 2019 Freie Universität Berlin"
 __license__ = "LGPL v2.1"
 __email__ = "m.lenders@fu-berlin.de"
 
-BOARD = os.environ.get("BOARD", "iotlab-m3")
-SINK_FIRMWARE_NAME = os.environ.get("SINK_FIRMWARE_NAME", "lcn19_sink")
-SOURCE_FIRMWARE_NAME = os.environ.get("SOURCE_FIRMWARE_NAME",
-                                      "lcn19_source")
-
-
 SCRIPT_PATH = os.path.dirname(os.path.realpath(__file__))
 APPS_PATH = os.path.join(SCRIPT_PATH, "..", "..", "apps")
 
@@ -56,8 +50,12 @@ RUNNING_EXPERIMENT_FILE = os.environ.get(
 )
 GLOBAL_PREFIX = os.environ.get("GLOBAL_PREFIX", "2001:db8:0:1:")
 
+SINK_FIRMWARE_NAME = "lcn19_sink"
+SOURCE_FIRMWARE_NAME = "lcn19_source"
+
 ARCHI_SHORT = "m3"
 ARCHI_FULL = "m3:at86rf231"
+BOARD = "iotlab-m3"
 
 MODES = set(("reass", "fwd"))
 SINK_PORT = 6383
