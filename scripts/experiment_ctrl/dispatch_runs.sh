@@ -43,6 +43,10 @@ if [ -n "${RUN_DURATION}" ]; then
     RUN_DURATION="--run-duration ${RUN_DURATION}"
 fi
 
+if [ -n "${TMUX_SESSION}" ]; then
+    TMUX_SESSION="-t ${TMUX_SESSION}"
+fi
+
 if [ -f "${NETWORK}" ]; then
     NETWORK="-f ${NETWORK}"
 else
@@ -64,7 +68,7 @@ for run in $(seq ${RUNS}); do
                     $(cat ${RUNNING_EXPERIMENT_FILE} 2> /dev/null) \
                     ${NETWORK} ${REFLASH} -d ${EXP_DURATION} -S ${SITE} \
                     -l ${DATA_LEN[$l]} -W ${DELAY} -c ${COUNT} \
-                    ${RUN_DURATION} ${SINK} ${MODE[$m]}
+                    ${RUN_DURATION} ${TMUX_SESSION} ${SINK} ${MODE[$m]}
             FAILED=$?
             REFLASH=""
             if [ ${FAILED} -ne 0 ]; then

@@ -172,6 +172,7 @@ can communicate with the IoT-LAB SSH frontend.
   `NETWORK`)
 - `SITE`: (default: `lille`) IoT-LAB site the experiment should run at
   (must be in line with `NETWORK`)
+- `TMUX_SESSION`: The TMUX target to run the experiments in
 
 Additionally, all environment variables accepted by the
 [`run_experiment.py`](#run_experimentpy) script can also be used (unless they
