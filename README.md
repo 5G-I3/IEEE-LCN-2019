@@ -16,7 +16,16 @@ The `scripts` directory contains both scripts for measuring the testbed as
 described in Section IV-A of the paper and to conduct the experiments.
 Please also refer to their respective `README`s for their usage.
 
+To handle the rather specific dependencies, we recommend using [virtualenv]:
+
+```
+virtualenv -p python3 env
+source env/bin/activate
+```
+
 TODO: provide scripts for plotting
+
+[virtualenv]: https://virtualenv.pypa.io/en/latest/
 
 Documentation
 -------------
