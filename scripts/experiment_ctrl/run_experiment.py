@@ -54,7 +54,7 @@ RUNNING_EXPERIMENT_FILE = os.environ.get(
     "RUNNING_EXPERIMENT_FILE", os.path.join(SCRIPT_PATH,
                                             "running_experiment.txt")
 )
-ULA_PREFIX = os.environ.get("ULA_PREFIX", "2001:db8:0:1:")
+GLOBAL_PREFIX = os.environ.get("GLOBAL_PREFIX", "2001:db8:0:1:")
 
 ARCHI_SHORT = "m3"
 ARCHI_FULL = "m3:at86rf231"
@@ -190,8 +190,8 @@ def _load_lladdr_ifaces(exp):
                 time.sleep(5)
 
 
-def _ula_from_link_local(link_local):
-    return link_local.replace(LINK_LOCAL_PREFIX, ULA_PREFIX)
+def _global_from_link_local(link_local):
+    return link_local.replace(LINK_LOCAL_PREFIX, GLOBAL_PREFIX)
 
 
 def _construct_routes(exp):
@@ -207,7 +207,7 @@ def _construct_routes(exp):
             # Add global unicast address to interface
             exp.cmd("{nodename};ifconfig {iface} add {ula}"
                     .format(nodename=n, iface=node.iface,
-                            ula=_ula_from_link_local(nll)), wait_after=.1)
+                            ula=_global_from_link_local(nll)), wait_after=.1)
             for neighbor in exp.nodes.neighbors(n):
                 # setting default route from neighbors to n
                 if neighbor not in visited:
@@ -218,7 +218,7 @@ def _construct_routes(exp):
                             wait_after=.3)
                 stack.append(neighbor)
             visited.add(n)
-    return _ula_from_link_local(exp.nodes[exp.nodes.sink].lla)
+    return _global_from_link_local(exp.nodes[exp.nodes.sink].lla)
 
 
 def _start_sniffer(exp, pcap_file):
