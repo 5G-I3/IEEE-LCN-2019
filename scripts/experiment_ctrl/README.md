@@ -12,6 +12,11 @@ to bookings within the selected site).
 `dispatch_runs.sh` starts a number of runs with different configurations of
 `run_experiment.py`.
 
+Finally, `setup_exp.sh` ensures the environment for `dispatch_runs.sh` is run in
+the background in one TMUX session (called `lcn19`) with insurance that an SSH
+authentication agent was started and configured to communicate with the IoT-LAB
+frontend server.
+
 ## Requirements
 The scripts assume they are run with Python 3.
 
@@ -178,6 +183,14 @@ Additionally, all environment variables accepted by the
 [`run_experiment.py`](#run_experimentpy) script can also be used (unless they
 get overwritten by the above-mentioned environment variables).
 
+### `setup_exp.sh`
+
+Helper script to automatically put `dispatch_runs.sh` (and its generated TMUX
+windows) in a TMUX session with proper SSH authentication agent configuration.
+
+As such, when starting the script, it might ask you for your SSH key passphrase.
+It is used to store your key in the SSH authentication agent, so the called
+scripts can communicate with the IoT-LAB SSH frontend.
 
 [M3 nodes]: https://www.iot-lab.info/hardware/m3/
 [IoT-LAB testbed]: https://www.iot-lab.info/

@@ -16,7 +16,7 @@ The `scripts` directory contains both scripts for measuring the testbed as
 described in Section IV-A of the paper and to conduct the experiments.
 Please also refer to their respective `README`s for their usage.
 
-TODO: provide scripts for automatic execution and plotting
+TODO: provide scripts for plotting
 
 Documentation
 -------------
