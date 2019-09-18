@@ -45,6 +45,8 @@ fi
 
 if [ -f "${NETWORK}" ]; then
     NETWORK="-f ${NETWORK}"
+else
+    NETWORK=""
 fi
 
 for run in $(seq ${RUNS}); do

@@ -9,6 +9,9 @@ to bookings within the selected site).
 
 `run_experiment.py` conducts a single experiment run for a single configuration.
 
+`dispatch_runs.sh` starts a number of runs with different configurations of
+`run_experiment.py`.
+
 ## Requirements
 The scripts assume they are run with Python 3.
 
@@ -140,6 +143,40 @@ for further information.
 
 Additionally, all environment variables accepted by the RIOT applications can
 also be used to configure the applications.
+
+### `dispatch_runs.sh`
+
+This scripts calls [`run_experiment.py`](#run_experimentpy) iteratively until
+3 runs of every configuration are done. The script takes no arguments, but is
+configurable via environment variables. The defaults are in line with the
+configurations in the paper.
+
+When starting the script might it ask you for your SSH key passphrase. It is
+used to store your key in the SSH authentication agent, so the called scripts
+can communicate with the IoT-LAB SSH frontend.
+
+#### Environment variables
+- `CHANNEL`: (default: 26) The channel the nodes in the experiments use their
+  radio on.
+- `COUNT`: (default: 100) Number of packets per run per configuration.
+- `DELAY`: (default: 10000) Mean delay between packets within the experiment
+  runs.
+- `EXP_DURATION`: (default: 2880) Length of the IoT-LAB experiment in minutes.
+- `NETWORK`: (default: `./../../results/m3-55xc7297640.edgelist.gz`) The
+  edge-list of the network to use with the experiments. If the file does not
+  exist, a network will be created
+- `RUNNING_EXPERIMENT_FILE`: (default: `./running_experiment.txt`) Name of the
+  file to store the IoT-LAB experiment ID to
+- `RUNS`: (default: 3) The number of runs for each configuration
+- `SINK`: (default: 55) Sink M3 node for the experiments (must be in line with
+  `NETWORK`)
+- `SITE`: (default: `lille`) IoT-LAB site the experiment should run at
+  (must be in line with `NETWORK`)
+
+Additionally, all environment variables accepted by the
+[`run_experiment.py`](#run_experimentpy) script can also be used (unless they
+get overwritten by the above-mentioned environment variables).
+
 
 [M3 nodes]: https://www.iot-lab.info/hardware/m3/
 [IoT-LAB testbed]: https://www.iot-lab.info/
