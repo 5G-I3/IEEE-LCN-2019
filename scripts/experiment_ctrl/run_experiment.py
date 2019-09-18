@@ -225,6 +225,11 @@ def _start_sniffer(exp, pcap_file):
         sniffer = exp.tmux_session.session.new_window("sniffer", DATA_PATH,
                                                       attach=False)
     sniffer = sniffer.select_pane(0)
+    if ("SSH_AUTH_SOCK" in os.environ) and ("SSH_AGENT_PID" in os.environ):
+        sniffer.send_keys("export SSH_AUTH_SOCK='{}'"
+                          .format(os.environ["SSH_AUTH_SOCK"]))
+        sniffer.send_keys("export SSH_AGENT_PID='{}'"
+                          .format(os.environ["SSH_AGENT_PID"]))
     # kill currently running sniffer
     sniffer.send_keys("C-c", suppress_history=False)
     sniffer.send_keys("ssh {}@{}.{} sniffer_aggregator -o - -i {} > {}"
