@@ -23,7 +23,7 @@ The scripts assume they are run with Python 3.
 The following python packages are required (version numbers indicate tested
 versions):
 
-- `iotlab_controller` (see https://github.com/miri64/iotlab_controller)
+- [`iotlab_controller`](https://github.com/miri64/iotlab_controller) v0.2.7
 - `libtmux` v0.8
 - `matplotlib` v3.1
 - `networkx` v2.3

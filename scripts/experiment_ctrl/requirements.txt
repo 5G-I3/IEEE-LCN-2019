@@ -3,4 +3,4 @@ matplotlib<=3.1
 networkx<=2.3
 pexpect<=4.7
 scipy<=1.3
-git+https://github.com/miri64/iotlab_controller.git
+git+https://github.com/miri64/iotlab_controller.git@0.2.7a
