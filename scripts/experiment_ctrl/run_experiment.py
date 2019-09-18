@@ -373,18 +373,18 @@ def main():
             return arg
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-d", "--duration", default=DEFAULT_DURATION, type=int,
-                        help="IoT-LAB experiment duration "
-                             "(default: {})".format(DEFAULT_DURATION))
-    parser.add_argument("-c", "--count", default=DEFAULT_COUNT, type=int,
-                        help="Number of UDP packets to send per source "
-                             "(default: {})".format(DEFAULT_COUNT))
     parser.add_argument("-l", "--data-len", default=DEFAULT_DATA_LEN, type=int,
                         help="Payload size of the UDP packets to sent "
                              "(default: {})".format(DEFAULT_DATA_LEN))
+    parser.add_argument("-c", "--count", default=DEFAULT_COUNT, type=int,
+                        help="Number of UDP packets to send per source "
+                             "(default: {})".format(DEFAULT_COUNT))
     parser.add_argument("-W", "--delay", default=DEFAULT_DELAY, type=int,
                         nargs="+", help="Delay between the UDP packets sent "
                                         "(default: {})".format(DEFAULT_DELAY))
+    parser.add_argument("-d", "--duration", default=DEFAULT_DURATION, type=int,
+                        help="IoT-LAB experiment duration "
+                             "(default: {})".format(DEFAULT_DURATION))
     parser.add_argument("-S", "--iotlab-site",
                         default=construct_network.DEFAULT_IOTLAB_SITE,
                         help="IoT-LAB site to pick nodes from (default: {})"
