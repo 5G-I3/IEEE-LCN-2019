@@ -4,6 +4,7 @@
 apps/*/bin/
 results/
 scripts/experiment_ctrl/running_experiment.txt
+scripts/experiment_ctrl/ssh-agent.cfg
 
 ## Python files
 # Byte-compiled / optimized / DLL files
