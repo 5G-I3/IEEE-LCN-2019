@@ -18,9 +18,10 @@ the experiments](./scripts/experiment_ctrl), and to [plot their
 results](./scripts/plots). Please also refer to their respective `README`s for
 their usage.
 
-To handle the rather specific dependencies, we recommend using [virtualenv]:
+To handle the rather specific dependencies of the scripts, we recommend using
+[virtualenv]:
 
-```
+```sh
 virtualenv -p python3 env
 source env/bin/activate
 ```
