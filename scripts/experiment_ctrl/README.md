@@ -138,7 +138,8 @@ for further information.
 
 #### Environment variables
 
-- `DATA_PATH`: (default: `./../../results`) Path to store the edge list file in
+- `DATA_PATH`: (default: `./../../results`) Path to store the resulting logs and
+  PCAPs in
 - `GLOBAL_PREFIX` (default: `2001:db8:0:1:`) Global IPv6 address prefix for the
   experiment network (has to be of length 64 bits)
 - `RUNNING_EXPERIMENT_FILE`: (default: `./running_experiment.txt`) Name of the
