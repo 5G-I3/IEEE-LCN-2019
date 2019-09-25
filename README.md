@@ -37,6 +37,22 @@ source env/bin/activate
 
 [virtualenv]: https://virtualenv.pypa.io/en/latest/
 
+Usage
+-----
+You can look into all the code and its documentation to figure everything out,
+but the quickest way to start the experiments (given the [provided network in
+results/](./results/m3-55xc7297640.edgelist.gz) is bookable in the IoT-LAB and
+all requirements on the OS side are fulfilled, see [scripts
+README's](./scripts/experiment_ctrl/README.md)) is to just run:
+
+```sh
+rm -rf env
+virtualenv -p python3 env
+source env/bin/activate
+pip install -r ./scripts/experiment_ctrl/requirements.txt
+./scripts/experiment_ctrl/setup_exp.sh
+```
+
 Documentation
 -------------
 TODO: link paper once it is published
