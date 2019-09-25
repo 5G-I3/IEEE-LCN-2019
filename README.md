@@ -17,7 +17,9 @@ git log
 ```
 
 The `apps` directory contains the RIOT applications required for the
-experiments. Please refer to their `README`s for their usage.
+experiments, one for the data [sink](./apps/sink) and one for the sources
+[sources and forwarders](./apps/source). Please refer to their `README`s for
+their usage.
 
 The `scripts` directory contains both scripts for [measuring the testbed as
 described in Section IV-A of the paper](./scripts/testbed_measure), to [conduct
