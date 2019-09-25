@@ -7,7 +7,14 @@ Code
 ----
 
 The explicit RIOT version is included as a submodule in this repository
-(`RIOT`).
+(`RIOT`). It is based on the 2019.07 release of RIOT but also contains all
+relevant changes to conduct the experiments. The PRs these changes came from are
+documented within the git history. For more information use
+
+```sh
+cd RIOT
+git log
+```
 
 The `apps` directory contains the RIOT applications required for the
 experiments. Please refer to their `README`s for their usage.
