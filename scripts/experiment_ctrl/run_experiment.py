@@ -74,7 +74,8 @@ DEFAULT_DURATION = 60
 
 def run_experiment(exp, mode, data_len, count, delay, sniff=False,
                    run_duration=None):
-    sources = exp.nodes.non_sink_nodes
+    sources = [n for n in exp.nodes.non_sink_nodes
+               if n not in exp.nodes.neighbors(exp.nodes.sink)]
     run_name = os.path.join(
         DATA_PATH,
         "{exp_name}__m{mode}_r{data_len}Bx{count}x{delay}ms_{timestamp}"
