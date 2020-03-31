@@ -55,4 +55,4 @@ pip install -r ./scripts/experiment_ctrl/requirements.txt
 
 Documentation
 -------------
-TODO: link paper once it is published
+[Paper](https://doi.org/10.1109/LCN44214.2019.8990812)
